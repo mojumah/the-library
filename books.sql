@@ -1,0 +1,15 @@
+CREATE DATABASE Aleppo;
+use Aleppo;
+CREATE TABLE quotes ( author varchar(255), title varchar(255) );
+Insert Into quotes (title, author) Values ('Engineering Electromagnetics', 'William H. Hayt,Jr');
+Insert Into quotes (title, author) Values ('Unix Power Tools', 'Shelly Powers, Jerry Peek, Tim O Reilly, Mike Loukides');
+Insert Into quotes (title, author) Values ('Digital Communications Fundamentals and Applications', 'Bernard Sklar');
+Insert Into quotes (title, author) Values ('Microwave Engineering', 'David M. Pozar');
+Insert Into quotes (title, author) Values ('Business Data Communications and Networking', 'Jerry FitzGerald, Alan Dennis');
+Insert Into quotes (title, author) Values ('Antenna Theory Analysis And Design', 'Constantine A. Ballanis');
+Insert Into quotes (title, author) Values ('Mathematics for Electrical Engineering and Computing', 'Mary Attenborough');
+Insert Into quotes (title, author) Values ('A History of the Arab Peoples', 'Albert Hourani with an afterword by Malise Ruthven');
+Insert Into quotes (title, author) Values ('Fear', 'Ranulph Fiennes');
+Insert Into quotes (title, author) Values ('Exploring War and Weapons', 'Kingfisher Explorer Books');
+Insert Into quotes (title, author) Values ('Exploring The Age of Dinosaurs', 'Kingfisher Explorer Books');
+Insert Into quotes (title, author) Values ('Exploring The Age of Steam', 'Kingfisher Explorer Books');
