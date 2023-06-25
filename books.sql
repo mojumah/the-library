@@ -37,3 +37,12 @@ Insert Into quotes (title, author) Values ('Schaum''s ouTlines Calculus', 'Frank
 Insert Into quotes (title, author) Values ('IGCSE Physics for Edexcel', 'Malcom Bradley and Chris Sunley');
 Insert Into quotes (title, author) Values ('IGCSE Mathematics for Edexcel', 'Paul Metcalf');
 Insert Into quotes (title, author) Values ('The complete Mathematics Study Guide for AS and A2 Success', 'Peter Sherran and Janet Crawshaw');
+Insert Into quotes (title, author) Values ('The President Is Missing', 'Bill Clinton And James Pattersons');
+Insert Into quotes (title, author) Values ('Churchill The Life An Authorised Pictorial Biography', 'Max Arthur');
+Insert Into quotes (title, author) Values ('Assignment: Jurusalem, Target: Antichrist Assasins', 'Tim Lahaye and Jerry B.Jenkins');
+Insert Into quotes (title, author) Values ('A Promised Land', 'Barack Obama');
+Insert Into quotes (title, author) Values ('4 Blood Types, 4 Diets Eat Right For Your Type The Individualized Diet Solution to Staying Health, Living Longer & Achieving Your Ideal Weight', 'Dr Peter J.D Adamo with Catherine Whitney');
+Insert Into quotes (title, author) Values ('Born Survivors', 'Wendy Holden');
+Insert Into quotes (title, author) Values ('The Churchill Factor', 'Boris Johnson');
+Insert Into quotes (title, author) Values ('The Room Where It Happened A White House Memoir', 'John Bolton');
+Insert Into quotes (title, author) Values ('The Biggest Secret', 'David Icke');
