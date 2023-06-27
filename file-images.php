@@ -5,7 +5,7 @@ $search = $_POST['search'];
 $servername = "";
 $username = "";
 $password = "";
-$dbname = "";
+$dbname = "Aleppo";
 $table = "";
 
 // Create connection
@@ -17,14 +17,18 @@ if ($conn->connect_error) {
 }
 // echo "Connected successfully";
 
-$sql = "select * from quotes where title like '%$search%'";
+$sql = "select * from images";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
 while($row = $result->fetch_assoc() ) {
-        echo "title: " . $row["title"]. " - author: " . $row["author"]. "
+        echo "title: " . $row["title"]. " - author: " . $row["author"]. " <img src=" .$row["image_pathLocation"]. "
+<br>
+<br>
 <br>";
+        
   }
+
  } else {
    echo "0 results";
  }
