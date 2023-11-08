@@ -4,7 +4,7 @@ $search = $_POST['search'];
 
 $servername = "localhost";
 $username = "dagan";
-$password = "X7e20B7!ib^Uus%6TWM";
+$password = "";
 $dbname = "library";
 $table = "books";
 
