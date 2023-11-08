@@ -1,5 +1,8 @@
-CREATE DATABASE Aleppo;
-use Aleppo;
+CREATE DATABASE library;
+use books;
+CREATE TABLE books (`id` BIGINT NOT NULL AUTO_INCREMENT, `title` VARCHAR(2048) NOT NULL, `author` VARCHAR(2048) NOT NULL, `image_pathLocation` VARCHAR(1024) NOT NULL, PRIMARY KEY(`id`));
+INSERT INTO books (title, author, image_pathLocation) Values ('Exploring War and Weapons', 'Brian Williams', 'https://sourcebucket-aleppo-library-resized.s3.eu-west-2.amazonaws.com/resized-Exploring+War+And+Weapons.jpg'
+
 CREATE TABLE quotes ( author varchar(255), title varchar(255) );
 Insert Into quotes (title, author) Values ('Engineering Electromagnetics', 'William H. Hayt,Jr');
 Insert Into quotes (title, author) Values ('Unix Power Tools', 'Shelly Powers, Jerry Peek, Tim O Reilly, Mike Loukides');
@@ -10,17 +13,17 @@ Insert Into quotes (title, author) Values ('Antenna Theory Analysis And Design',
 Insert Into quotes (title, author) Values ('Mathematics for Electrical Engineering and Computing', 'Mary Attenborough');
 Insert Into quotes (title, author) Values ('A History of the Arab Peoples', 'Albert Hourani with an afterword by Malise Ruthven');
 Insert Into quotes (title, author) Values ('Fear', 'Ranulph Fiennes');
-Insert Into quotes (title, author) Values ('Exploring War and Weapons', 'Kingfisher Explorer Books');
-Insert Into quotes (title, author) Values ('Exploring The Age of Dinosaurs', 'Kingfisher Explorer Books');
-Insert Into quotes (title, author) Values ('Exploring The Age of Steam', 'Kingfisher Explorer Books');
-Insert Into quotes (title, author) Values ('Exploring The Planets', 'Kingfisher Explorer Books');
-Insert Into quotes (title, author) Values ('Exploring Knights And Castles', 'Kingfisher Explorer Books');
-Insert Into quotes (title, author) Values ('The Midnight World', 'Kingfisher Explorer Books');
-Insert Into quotes (title, author) Values ('Exploring Animal Journeys', 'Kingfisher Explorer Books');
-Insert Into quotes (title, author) Values ('Exploring Under The Sea', 'Kingfisher Explorer Books');
-Insert Into quotes (title, author) Values ('Exploring Animal Homes', 'Kingfisher Explorer Books');
-Insert Into quotes (title, author) Values ('Exploring The World Of Speed', 'Kingfisher Explorer Books');
-Insert Into quotes (title, author) Values ('Exploring The World Of Robots', 'Kingfisher Explorer Books');
+Insert Into quotes (title, author) Values ('Exploring War and Weapons', '');
+Insert Into quotes (title, author) Values ('Exploring The Age of Dinosaurs', '');
+Insert Into quotes (title, author) Values ('Exploring The Age of Steam', '');
+Insert Into quotes (title, author) Values ('Exploring The Planets', '');
+Insert Into quotes (title, author) Values ('Exploring Knights And Castles', '');
+Insert Into quotes (title, author) Values ('The Midnight World', '');
+Insert Into quotes (title, author) Values ('Exploring Animal Journeys', '');
+Insert Into quotes (title, author) Values ('Exploring Under The Sea', '');
+Insert Into quotes (title, author) Values ('Exploring Animal Homes', '');
+Insert Into quotes (title, author) Values ('Exploring The World Of Speed', '');
+Insert Into quotes (title, author) Values ('Exploring The World Of Robots', '');
 Insert Into quotes (title, author) Values ('Delhi Agra & Jaipur', 'Eyewitness Travel');
 Insert Into quotes (title, author) Values ('Istanbul', 'Eyewitness Travel');
 Insert Into quotes (title, author) Values ('Malaysia & Singapore', 'Eyewitness Travel');

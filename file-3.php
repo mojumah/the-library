@@ -2,11 +2,11 @@
 
 $search = $_POST['search'];
 
-$servername = "";
-$username = "";
+$servername = "localhost";
+$username = "dagan";
 $password = "";
-$dbname = "";
-$table = "";
+$dbname = "library";
+$table = "books";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

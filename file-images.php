@@ -2,11 +2,11 @@
 
 $search = $_POST['search'];
 
-$servername = "";
-$username = "";
-$password = "";
-$dbname = "Aleppo";
-$table = "";
+$servername = "localhost";
+$username = "dagan";
+$password = "X7e20B7!ib^Uus%6TWM";
+$dbname = "library";
+$table = "books";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 }
 // echo "Connected successfully";
 
-$sql = "select * from images";
+$sql = "select * from books";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
