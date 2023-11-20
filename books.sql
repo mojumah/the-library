@@ -1,7 +1,7 @@
 CREATE DATABASE library;
 use books;
 CREATE TABLE books (`id` BIGINT NOT NULL AUTO_INCREMENT, `title` VARCHAR(2048) NOT NULL, `author` VARCHAR(2048) NOT NULL, `image_pathLocation` VARCHAR(1024) NOT NULL, PRIMARY KEY(`id`));
-INSERT INTO books (title, author, image_pathLocation) Values ('Exploring War and Weapons', 'Brian Williams', 'https://sourcebucket-aleppo-library-resized.s3.eu-west-2.amazonaws.com/resized-Exploring+War+And+Weapons.jpg'
+INSERT INTO books (title, author, image_pathLocation) Values ('Exploring War and Weapons', 'Brian Williams', 'images/resized-ExploringWarandWeapons.jpg');
 
 CREATE TABLE quotes ( author varchar(255), title varchar(255) );
 Insert Into quotes (title, author) Values ('Engineering Electromagnetics', 'William H. Hayt,Jr');
@@ -31,15 +31,6 @@ Insert Into quotes (title, author) Values ('Australia New Zeland The Essential G
 Insert Into quotes (title, author) Values ('Have I Got News For You Guide To Modern Britain', 'Nick Mrtin');
 Insert Into quotes (title, author) Values ('Mister Pip', 'Lloyd Jones');
 Insert Into quotes (title, author) Values ('The Casual Vacancy', 'J.K.Rowling');
-Insert Into quotes (title, author) Values ('Physics The Easy Way', 'Robert L. Lehrman');
-Insert Into quotes (title, author) Values ('Advanced Mathematics Core 3 & 4', 'Hugh Neill and Douglas Quadling');
-Insert Into quotes (title, author) Values ('Physics Demystified', 'Stan Gibilisco');
-Insert Into quotes (title, author) Values ('Advanced Mathematics Core 1 & 2', 'Hugh Neill and Douglas Quadling');
-Insert Into quotes (title, author) Values ('Engineering Mechanics Dynamics In SI Units', 'Peter Schiavone and R.C. Hibbeler');
-Insert Into quotes (title, author) Values ('Schaum''s ouTlines Calculus', 'Frank Ayres Jr. and Elliott Mendelson');
-Insert Into quotes (title, author) Values ('IGCSE Physics for Edexcel', 'Malcom Bradley and Chris Sunley');
-Insert Into quotes (title, author) Values ('IGCSE Mathematics for Edexcel', 'Paul Metcalf');
-Insert Into quotes (title, author) Values ('The complete Mathematics Study Guide for AS and A2 Success', 'Peter Sherran and Janet Crawshaw');
 Insert Into quotes (title, author) Values ('The President Is Missing', 'Bill Clinton And James Pattersons');
 Insert Into quotes (title, author) Values ('Churchill The Life An Authorised Pictorial Biography', 'Max Arthur');
 Insert Into quotes (title, author) Values ('Assignment: Jurusalem, Target: Antichrist Assasins', 'Tim Lahaye and Jerry B.Jenkins');
