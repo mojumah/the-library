@@ -30,7 +30,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<table><tr><th>Title</th><th>Author</th><th>Cover</th></tr>";
     while($row = $result->fetch_assoc() ) {
-        echo "<tr><td>" . $row["title"]. "</td><td>" . $row["author"]. " </td></tr>";
+        echo "<tr><td>" . $row["title"]. "</td><td>" . $row["author"]. " </td><td><img src=" .$row["image_pathLocation"]. " </td></tr>";       
     }
     echo "</table>";
 
