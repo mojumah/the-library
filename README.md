@@ -1,5 +1,5 @@
 # aleppo-library
 On premise LAMP stack.
 
-![image info](./Screenshot from 2023-11-21 22-35-21.jpg)
-![image info](./Screenshot from 2023-11-21 22-35-21.jpg)
+![image info](./product-image-1.png)
+![image info](./product-image-2.png)
