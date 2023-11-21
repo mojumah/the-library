@@ -1,2 +1,5 @@
 # aleppo-library
-RDS Maria DB including Author and Title of several books that are physically available in the UK. 
+On premise LAMP stack.
+
+![image info](./Screenshot from 2023-11-21 22-35-21.jpg)
+![image info](./Screenshot from 2023-11-21 22-35-21.jpg)
