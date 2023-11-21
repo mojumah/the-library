@@ -4,3 +4,4 @@ CREATE TABLE books (`id` BIGINT NOT NULL AUTO_INCREMENT, `title` VARCHAR(2048) N
 
 INSERT INTO books (title, author, image_pathLocation) Values ('Exploring War and Weapons', 'Brian Williams', 'images/resized-ExploringWarandWeapons.jpg');
 INSERT INTO books (title, author, image_pathLocation) Values ('Exploring Animal Journeys', 'Theodore Rowland-Entwistle', 'images/resized-ExploringAnimalJourneys.jpg');
+INSERT INTO books (title, author, image_pathLocation) Values ('Exploring The World Of Robots', 'Jonathn Rutland', 'resized-ExploringTheWorldOfRobots.jpg');
