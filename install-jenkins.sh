@@ -26,4 +26,7 @@ aws configure
 cd /var/lib/jenkins
 cd ~
 rm -rf .aws
-## rotate creds
+sudo systemctl stop jenkins.service 
+sudo poweroff
+####jenkins ALL=(ALL) NOPASSWD: ALL
+#### rotate creds or delete aws creds
