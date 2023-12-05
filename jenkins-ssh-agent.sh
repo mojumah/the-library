@@ -1,6 +1,6 @@
 ### On the Jenkins controller
 sudo apt install openssh-client
-ssh-keygen -t rsa
+ssh-keygen -t ed25519
 sudo apt install openssh-server 
 sudo vi /etc/ssh/sshd_config
 sudo systemctl restart ssh.service 
