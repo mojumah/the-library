@@ -1,11 +1,18 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'agent1'
+        }
+    }
+    environment {
+      AWS_DEFAULT_REGION="eu-west-2"
+    }
     stages {
-        stage('Hello') {
+        stage('get-thumbnail-from-s3') {
             steps {
                 sh '''
-                    cd /var/www/html/images
-                    sudo aws s3 sync --include "*.jpg" s3://aleppo-library-books-covers-resized .
+                    aws --version
+                   
                 '''
             }
         }
