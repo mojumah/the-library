@@ -14,6 +14,7 @@ pipeline {
                 sh '''
                     aws --version
                     aws s3 sync --include "*.jpg" s3://aleppo-library-books-covers-resized/ .
+                    rsync -a /home/mo/workspace/aws-pipeline/ ubuntu@192.168.1.135:/home/ubuntu/rsync-project/
                 '''
                 }
             }
