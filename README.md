@@ -10,4 +10,5 @@ Product UI
 
 Architecture
 
-![image info](./aleppo-library-architecture.jpg)
+![My VPC](./Architecture/MyVPC.pdf "Library's VPC in the Cloud")
+![image info](./Architecture/aleppo-library-architecture.jpg)
