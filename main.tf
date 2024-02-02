@@ -203,7 +203,7 @@ resource "aws_instance" "minion-website" {
   instance_type = "t2.micro"
   subnet_id = aws_subnet.es1.id
   vpc_security_group_ids = ["${aws_security_group.allow_ssh.id}"]
-  key_name = "librarian-key"
+  key_name = "library-key"
   user_data = data.template_file.user_data.rendered
 
   tags = {
@@ -225,7 +225,7 @@ resource "aws_instance" "salt-master" {
   instance_type = "t2.micro"
   subnet_id = aws_subnet.es1.id
   vpc_security_group_ids = ["${aws_security_group.allow_ssh_to_salt_master.id}"]
-  key_name = "librarian-key"
+  key_name = "library-key"
   user_data = data.template_file.user_data.rendered
 
   tags = {
