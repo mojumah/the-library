@@ -195,7 +195,7 @@ resource "aws_security_group_rule" "allow_all_TCP_from_salt_minion" {
 }
 
 data "template_file" "user_data" {
-  templte = file("/home/mo/workspace/library/install-nginx.yaml")
+  templte = file("/home/mo/workspace/library/script/install-nginx.yaml")
 }
 
 resource "aws_instance" "minion-website" {
@@ -217,7 +217,7 @@ resource "aws_eip" "minion-website-ip" {
 }
 
 data "template_file" "user_data_of_the_salt_master" {
-  template = file("/home/mo/workspace/library/install-salt-master.yaml")
+  template = file("/home/mo/workspace/library/script/install-salt-master.yaml")
 }
 
 resource "aws_instance" "salt-master" {
