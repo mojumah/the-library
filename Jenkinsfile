@@ -1,5 +1,10 @@
 pipeline {
-    agent any 
+    
+    agent {
+        node {
+            label 'agent1'
+        }
+    }
 
     environment {
       AWS_DEFAULT_REGION="us-east-1"
