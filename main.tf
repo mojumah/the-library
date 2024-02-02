@@ -195,7 +195,7 @@ resource "aws_security_group_rule" "allow_all_TCP_from_salt_minion" {
 }
 
 data "template_file" "user_data" {
-  templte = file("/home/mo/workspace/library/script/install-nginx.yaml")
+  template = file("/home/mo/workspace/library/script/install-nginx.yaml")
 }
 
 resource "aws_instance" "minion-website" {
