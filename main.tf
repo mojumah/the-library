@@ -194,13 +194,17 @@ resource "aws_security_group_rule" "allow_all_TCP_from_salt_minion" {
   cidr_blocks = ["${aws_instance.minion-website.private_ip}/32"] 
 }
 
+data "template_file" "user_data" {
+  templte = file("/home/mo/workspace/library/install-nginx.yaml")
+}
+
 resource "aws_instance" "minion-website" {
   ami           = "ami-02f3f602d23f1659d"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.es1.id
   vpc_security_group_ids = ["${aws_security_group.allow_ssh.id}"]
-
-
+  key_name = "librarian-key"
+  user_data = data.template_file.user_data.rendered
 
   tags = {
     Name = "minion-website"
@@ -212,13 +216,17 @@ resource "aws_eip" "minion-website-ip" {
   vpc      = true
 }
 
-
+data "template_file" "user_data_of_the_salt_master" {
+  template = file("/home/mo/workspace/library/install-salt-master.yaml")
+}
 
 resource "aws_instance" "salt-master" {
   ami           = "ami-02f3f602d23f1659d"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.es1.id
   vpc_security_group_ids = ["${aws_security_group.allow_ssh_to_salt_master.id}"]
+  key_name = "librarian-key"
+  user_data = data.template_file.user_data.rendered
 
   tags = {
     Name = "salt-master"
