@@ -1,5 +1,5 @@
 pipeline {
-    
+
     agent {
         node {
             label 'agent1'
@@ -16,6 +16,9 @@ pipeline {
                 sh '''
                     aws --version
                     terraform --version
+                    terraform init
+                    terraform plan 
+                    terraform apply -auto-approve
 
                 '''
                 }
