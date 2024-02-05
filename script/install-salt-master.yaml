@@ -24,22 +24,10 @@ packages:
 # installing nginx, httpd-tools, and salt-minion
 
 runcmd:
-  - sudo su nginx
   - sudo mkdir /home/nginx
-  - sudo yum install epel-release -y
   - sudo yum update -y
-  - sudo yum install nginx -y
-  - sudo systemctl start nginx
-  - sudo yum install httpd-tools -y
-  - cd /usr/share/nginx/html
-  - sudo aws s3 cp s3://directions-from-court/composite-case-summary.html . 
-  - sudo mv composite-case-summary.html index.html
-  - sudo systemctl restart nginx
   - sudo rpm --import https://repo.saltproject.io/salt/py3/amazon/2/x86_64/SALT-PROJECT-GPG-PUBKEY-2023.pub
   - sudo curl -fsSL https://repo.saltproject.io/salt/py3/amazon/2/x86_64/latest.repo | sudo tee /etc/yum.repos.d/salt-amzn.repo
   - sudo yum install salt-minion -y
   - sudo yum install salt-ssh -y
   - sudo systemctl enable salt-minion && sudo systemctl start salt-minion
-  - sudo yum install python3-pip
-  - sudo yum install -y pango
-  - sudo pip install weasyprint
