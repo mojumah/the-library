@@ -16,8 +16,6 @@ users:
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     lock_passwd: false
-    ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCgxSISRh0wtMcpQ5BevPguteVAPkZb5Z0N2zvu8L+KMCmqrmdhrvnwVWMMJ0bhw4I+U+JiXrbKCuCeWMG6foHepIChCMsf0nHgzVaKcWGKI6x6B1Z7oHI9g5vNSdWcWLb3SNvI8xMxIFkHB2DfoL4InYvcr37a4J9aUoQOjQI9NBPKzCwJR9iCS6h7DLOhV+RD53e0u+oMQowdc/G0MMMwOu21UA9fXM+H07LjgJVabxImnFTFbWD+aaBYUEaqO2WGZr1sSJ4+a4qWhit4XuXHSibR4uQwp58RzoakaqSRB7VL4UGw2k4eoHkomdkYteQwi+MRYSEFOOWsCUDZ37wb
 
 # Downloads the nginx package
 packages:
