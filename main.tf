@@ -199,7 +199,7 @@ data "template_file" "user_data" {
 }
 
 resource "aws_instance" "minion-website" {
-  ami           = "ami-02f3f602d23f1659d"
+  ami           = "ami-0c7217cdde317cfec"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.es1.id
   vpc_security_group_ids = ["${aws_security_group.allow_ssh.id}"]
@@ -221,7 +221,7 @@ data "template_file" "user_data_of_the_salt_master" {
 }
 
 resource "aws_instance" "salt-master" {
-  ami           = "ami-02f3f602d23f1659d"
+  ami           = "ami-0c7217cdde317cfec"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.es1.id
   vpc_security_group_ids = ["${aws_security_group.allow_ssh_to_salt_master.id}"]

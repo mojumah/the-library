@@ -1,0 +1,4 @@
+*.backup
+*.tfstate
+*.hcl
+*.pem
