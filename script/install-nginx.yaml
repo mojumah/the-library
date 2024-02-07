@@ -25,3 +25,4 @@ packages:
 
 runcmd:
   - sudo su nginx
+  - sudo mkdir /home/nginx
