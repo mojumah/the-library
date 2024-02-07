@@ -16,6 +16,16 @@ users:
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     lock_passwd: false
+    ssh_authorized_keys:
+      - -----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgQnS/GCWmS8yik3FmeUr
+O4xIFKr5PsdhJghi+gVotVo9sQWsiATilZ+nFEZ3R4yWlqSndM/ZVVfEn/qyAxEs
+xQ7pWYlemxGm2508RWTDTl6tR/EWifXA5Ei+W6Pna8mjFGVXKQWG0uCwSkDOpZWH
+xEdCLvX7BxDwV6oihv39plDD1qz9O9ELdNhDw6bXSWqFzcmrtOzXWfVWuf7h6esD
+LahT9W4JVDMasnVOJmMSZAjZc4VzCwFpwS1/m6B5rmx6Gl3YbdZ7hRaLZIiZkDZ7
+w7XNifViPmLidu97adGAgLzF8qSXYYhwVv322rzBAoBNE7I8c4gVVrRhqYSSJS68
+TQIDAQAB
+-----END PUBLIC KEY-----
 
 # salt-master
 
