@@ -9,25 +9,26 @@ groups:
 # Add users to the system. Users are added after groups are added.
 users:
   - default
-  - name: nginx
-    gecos: nginx
+  - name: salt
+    gecos: salt
     shell: /bin/bash
     primary_group: cloud-user
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     lock_passwd: false
 
-# Downloads the nginx package
-packages:
-  - nginx
-
-# installing nginx, httpd-tools, and salt-minion
+# salt-master
 
 runcmd:
-  - sudo mkdir /home/nginx
-  - sudo yum update -y
+  - sudo su salt
+  - sudo mkdir /srv/salt
+  - sudo mkdir /srv/salt/nginx
+  - sudo mkdir /srv/pillar
   - sudo rpm --import https://repo.saltproject.io/salt/py3/amazon/2/x86_64/SALT-PROJECT-GPG-PUBKEY-2023.pub
-  - sudo curl -fsSL https://repo.saltproject.io/salt/py3/amazon/2/x86_64/latest.repo | sudo tee /etc/yum.repos.d/salt-amzn.repo
-  - sudo yum install salt-minion -y
+  - curl -fsSL https://repo.saltproject.io/salt/py3/amazon/2/x86_64/latest.repo | sudo tee /etc/yum.repos.d/salt-amzn.repo
+  - sudo yum install salt-master -y
   - sudo yum install salt-ssh -y
-  - sudo systemctl enable salt-minion && sudo systemctl start salt-minion
+  - sudo systemctl enable salt-master && sudo systemctl start salt-master
+  - sudo systemctl restart salt-master.service
+  - sudo aws s3 cp s3://directions-from-court/master /etc/salt
+  - sudo systemctl restart salt-master.service
