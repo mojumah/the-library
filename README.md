@@ -1,4 +1,4 @@
-# aleppo-library
+# the-library
 DON'T USE THIS CODE IN PRODUCTION
 THIS IS A **TESTING** ON PREM LAMP STACK.
 ALL DB CONNECTIONS ARE TO localhost
@@ -10,5 +10,4 @@ Product UI
 
 Architecture
 
-![My VPC](./Architecture/MyVPC.pdf "Library's VPC in the Cloud")
 ![image info](./Architecture/aleppo-library-architecture.jpg)
