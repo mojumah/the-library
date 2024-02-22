@@ -6,6 +6,9 @@ ALL DB CONNECTIONS ARE TO localhost
 Product UI
 
 ![image info](./product-image-1-2.png)
+
+Example search result
+
 ![image info](./product-image-2.png)
 
 
