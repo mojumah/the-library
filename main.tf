@@ -13,26 +13,26 @@ provider "aws" {
   region  = "us-east-1"
 }
 
-resource "aws_vpc" "fdr" {
+resource "aws_vpc" "library" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
-    Name = "fdr"
+    Name = "library"
   }
   
 }
 
 resource "aws_internet_gateway" "gw" {
-  vpc_id = aws_vpc.fdr.id
+  vpc_id = aws_vpc.library.id
 
   tags = {
-    Name = "fdr-gw"
+    Name = "library-gw"
   }
   
 }
 
 resource "aws_subnet" "es1" {
-  vpc_id = aws_vpc.fdr.id
+  vpc_id = aws_vpc.library.id
   cidr_block = "10.0.1.0/24"
 
   tags = {
@@ -42,7 +42,7 @@ resource "aws_subnet" "es1" {
 }
 
 resource "aws_subnet" "es2" {
-  vpc_id = aws_vpc.fdr.id
+  vpc_id = aws_vpc.library.id
   cidr_block = "10.0.2.0/24"
 
   tags = {
@@ -52,7 +52,7 @@ resource "aws_subnet" "es2" {
 }
 
 resource "aws_route_table" "es1" {
-  vpc_id = aws_vpc.fdr.id
+  vpc_id = aws_vpc.library.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -71,7 +71,7 @@ resource "aws_route_table_association" "es1" {
 }
 
 resource "aws_route_table" "es2" {
-  vpc_id = aws_vpc.fdr.id
+  vpc_id = aws_vpc.library.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -92,7 +92,7 @@ resource "aws_route_table_association" "es2" {
 resource "aws_security_group" "allow_ssh" {
   name = "allow_ssh"
   description = "Allow SSH"
-  vpc_id = aws_vpc.fdr.id
+  vpc_id = aws_vpc.library.id
 
   ingress {
     description = "SSH from VPC"
@@ -143,7 +143,7 @@ resource "aws_security_group" "allow_ssh" {
 resource "aws_security_group" "allow_ssh_to_salt_master" {
   name = "allow_ssh_to_salt_master"
   description = "Allow SSH"
-  vpc_id = aws_vpc.fdr.id
+  vpc_id = aws_vpc.library.id
 
   ingress {
     description = "SSH from VPC"
