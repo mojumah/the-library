@@ -31,27 +31,27 @@ resource "aws_internet_gateway" "gw" {
   
 }
 
-resource "aws_subnet" "es1" {
+resource "aws_subnet" "public" {
   vpc_id = aws_vpc.library.id
   cidr_block = "10.0.1.0/24"
 
   tags = {
-    Name = "es1"
+    Name = "public"
   }
   
 }
 
-resource "aws_subnet" "es2" {
+resource "aws_subnet" "private-2" {
   vpc_id = aws_vpc.library.id
   cidr_block = "10.0.2.0/24"
 
   tags = {
-    Name = "es2"
+    Name = "private-2"
   }
   
 }
 
-resource "aws_route_table" "es1" {
+resource "aws_route_table" "public" {
   vpc_id = aws_vpc.library.id
 
   route {
@@ -59,18 +59,18 @@ resource "aws_route_table" "es1" {
     gateway_id = aws_internet_gateway.gw.id
   }
   tags = {
-    Name = "es1 route table"
+    Name = "public route table"
   }
   
 }
 
-resource "aws_route_table_association" "es1" {
-  subnet_id = "${aws_subnet.es1.id}"
-  route_table_id = "${aws_route_table.es1.id}"
+resource "aws_route_table_association" "public" {
+  subnet_id = "${aws_subnet.public.id}"
+  route_table_id = "${aws_route_table.public.id}"
   
 }
 
-resource "aws_route_table" "es2" {
+resource "aws_route_table" "private-2" {
   vpc_id = aws_vpc.library.id
 
   route {
@@ -78,14 +78,14 @@ resource "aws_route_table" "es2" {
     gateway_id = aws_internet_gateway.gw.id
   }
   tags = {
-    Name = "es2 route table"
+    Name = "private-2 route table"
   }
   
 }
 
-resource "aws_route_table_association" "es2" {
-  subnet_id = "${aws_subnet.es2.id}"
-  route_table_id = "${aws_route_table.es2.id}"
+resource "aws_route_table_association" "private-2" {
+  subnet_id = "${aws_subnet.private-2.id}"
+  route_table_id = "${aws_route_table.private-2.id}"
   
 }
 
@@ -201,7 +201,7 @@ data "template_file" "user_data" {
 resource "aws_instance" "minion-website" {
   ami           = "ami-0277155c3f0ab2930"
   instance_type = "t2.micro"
-  subnet_id = aws_subnet.es1.id
+  subnet_id = aws_subnet.public.id
   vpc_security_group_ids = ["${aws_security_group.allow_ssh.id}"]
   key_name = "library-key"
   user_data = data.template_file.user_data.rendered
@@ -223,7 +223,7 @@ data "template_file" "user_data_of_the_salt_master" {
 resource "aws_instance" "salt-master" {
   ami           = "ami-0277155c3f0ab2930"
   instance_type = "t2.micro"
-  subnet_id = aws_subnet.es1.id
+  subnet_id = aws_subnet.public.id
   vpc_security_group_ids = ["${aws_security_group.allow_ssh_to_salt_master.id}"]
   key_name = "library-key"
   user_data = data.template_file.user_data.rendered
