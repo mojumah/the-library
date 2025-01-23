@@ -41,6 +41,6 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-    <button type="button">Back to Search page!</button>
+    <button onclick="history.back()">Back to Search page!</button>
 </body>
 </html>
