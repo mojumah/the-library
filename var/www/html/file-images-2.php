@@ -34,12 +34,12 @@ if ($result->num_rows > 0) {
     }
     echo "</table>";
 
-
  } else {
    echo "0 results";
  }
 $conn->close();
 ?>
+
 
     <button onclick="history.back()">Back to Search page!</button>
 </body>

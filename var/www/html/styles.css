@@ -1,0 +1,21 @@
+table, th, td {
+    border: 1px solid black;
+}
+body {
+    background-color: #FFE4E1;
+    font-family: verdana; 
+  }
+  h1 {
+    color: red; 
+    font-family: verdana;
+  }
+  
+  h2 {
+    color: #C21E56;
+    font-family: verdana;
+  }
+  
+  p {
+    color: red;
+    font-family: verdana;
+  }
