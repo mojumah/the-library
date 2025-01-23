@@ -7,3 +7,4 @@ INSERT INTO books (title, author, image_pathLocation) Values ('Exploring Animal 
 INSERT INTO books (title, author, image_pathLocation) Values ('Exploring The World Of Robots', 'Jonathn Rutland', 'resized-ExploringTheWorldOfRobots.jpg');
 INSERT INTO books (title, author, image_pathLocation) Values ('Exploring Under The Sea', 'Brian Williams', 'images/resized-ExploringUnderTheSea.jpg');
 INSERT INTO books (title, author, image_pathLocation) Values ('Exploring The Age Of Steam', 'Jonathan Rutland', 'images/resized-ExploringTheAgeOfSteam.jpg');
+INSERT INTO books (title, author, image_pathLocation) Values ('Les Miserables', 'Victor Hugo', 'images/resized-Les-Miserables.jpg');

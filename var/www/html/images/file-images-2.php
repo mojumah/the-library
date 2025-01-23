@@ -34,11 +34,13 @@ if ($result->num_rows > 0) {
     }
     echo "</table>";
 
+
  } else {
    echo "0 results";
  }
 $conn->close();
 ?>
 
+    <button type="button">Back to Search page!</button>
 </body>
 </html>
