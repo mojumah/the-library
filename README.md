@@ -1,14 +1,5 @@
-# the-library
-DON'T USE THIS CODE IN PRODUCTION
-THIS IS A **TESTING** ON PREM LAMP STACK.
-ALL DB CONNECTIONS ARE TO localhost
+# SSH Keys
+These are required to establish an SSH connection to the EC2 instance.
+In AWS EC2 create a .pem file. The file name is passed as a parameter in the workflow command:
 
-Product UI
-
-![image info](./product-image-1-2.png)
-![image info](./product-image-2.png)
-
-
-Architecture
-
-![image info](./Architecture/aleppo-library-architecture.jpg)
+``aws cloudformation create-stack --stack-name whale --template-body file://whale.yaml --parameters ParameterKey=myKeyPair,ParameterValue=<your key name>``
