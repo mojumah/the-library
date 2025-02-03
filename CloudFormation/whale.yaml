@@ -1,1 +1,50 @@
-aws cloudformation create-stack --stack-name whale --template-body file://whale.yaml --parameters ParameterKey=myKeyPair,ParameterValue=lib
+Parameters: 
+  myKeyPair: 
+    Description: Amazon EC2 Key Pair
+    Type: "AWS::EC2::KeyPair::KeyName"
+  NetworkStackNameParameter:
+    Type: String
+    Default: "wordpress-vpc"
+  LatestAmiId:
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Default: '/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64'
+
+Resources:
+
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.small
+      ImageId: !Ref LatestAmiId  
+      KeyName: !Ref myKeyPair
+      AvailabilityZone: "us-east-1a" 
+      IamInstanceProfile: SSMInstanceProfile
+      SecurityGroupIds:
+        - Fn::ImportValue: !Sub "${NetworkStackNameParameter}-SecurityGroupID"
+      SubnetId: 
+        Fn::ImportValue: !Sub "${NetworkStackNameParameter}-SubnetID"
+      Tags:
+        - Key: Content Managment System
+          Value: WordPress
+      UserData:
+        Fn::Base64:
+          !Sub |
+             #!/bin/bash
+             cd /home/ec2-user
+             sudo dnf upgrade -y
+             sudo dnf install -y httpd wget php-fpm php-mysqli php-json php php-devel
+             sudo dnf install mariadb105-server -y
+             sudo systemctl start httpd
+             sudo systemctl enable httpd
+             sudo systemctl is-enabled httpd
+             sudo usermod -a -G apache ec2-user
+             sudo chown -R ec2-user:apache /var/www
+             sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
+             find /var/www -type f -exec sudo chmod 0664 {} \;
+             sudo systemctl start mariadb
+
+  ElasticIP:
+    Type: 'AWS::EC2::EIP' 
+    Properties:
+      Domain: VPC
+      InstanceId: !Ref Ec2Instance  
