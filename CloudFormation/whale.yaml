@@ -1,0 +1,1 @@
+aws cloudformation create-stack --stack-name whale --template-body file://whale.yaml --parameters ParameterKey=myKeyPair,ParameterValue=lib
